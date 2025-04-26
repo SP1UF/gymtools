@@ -1,29 +1,45 @@
-/* Prosty styl mobilny */
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Stylizowanie body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 10px;
+    padding: 0;
 }
 
+/* Stylizacja nagłówka (header) */
 .header {
     background-color: #222;
-    padding: 10px;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    position: relative;
+    top: 0;
+    /* Wyrównanie z dynamiczną wyspą (notch) na iPhone'ach */
+    padding-top: env(safe-area-inset-top, 10px); /* Zajmuje wyspę na iPhone'ach */
+    box-sizing: border-box;
 }
 
 .logo {
     width: 60px;
     height: auto;
+    display: block;
 }
 
+/* Główna zawartość */
 .main-content {
     margin-top: 20px;
 }
 
+/* Stylizacja kalkulatora BMI */
 .bmi-calculator {
     background: white;
     padding: 20px;
@@ -33,6 +49,7 @@ body {
     margin: 0 auto;
 }
 
+/* Stylizacja formularza BMI */
 .bmi-calculator label {
     display: block;
     margin-bottom: 5px;
@@ -40,7 +57,7 @@ body {
 }
 
 .bmi-calculator input {
-    width: 92%;
+    width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -69,6 +86,7 @@ body {
     font-size: 1.3em;
 }
 
+/* Stylizacja stopki */
 .footer {
     text-align: center;
     margin-top: 30px;
