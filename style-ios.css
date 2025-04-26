@@ -94,3 +94,45 @@ body {
     font-size: 0.9em;
     color: #777;
 }
+/* ------------------- */
+/* TRYB CIEMNY AUTOMATYCZNY */
+/* ------------------- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #eee;
+    }
+
+    .header {
+        background-color: #000;
+        color: white;
+    }
+
+    .navbar a {
+        color: white;
+    }
+
+    .bmi-calculator {
+        background-color: #1e1e1e;
+        color: #eee;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .bmi-calculator input {
+        background-color: #333;
+        color: #eee;
+        border: 1px solid #555;
+    }
+
+    .bmi-calculator button {
+        background-color: #ff6600;
+    }
+
+    .bmi-calculator button:hover {
+        background-color: #e65c00;
+    }
+
+    .footer {
+        color: #aaa;
+    }
+}
