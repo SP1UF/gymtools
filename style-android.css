@@ -9,10 +9,12 @@ body {
 
 .header {
     background-color: #222;
-    padding: 10px;
+    padding: 10px 0; /* Usunięcie białych krawędzi na telefonach */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Dopasowuje szerokość do ekranu */
+    box-sizing: border-box; /* Wlicza padding w szerokość */
 }
 
 .logo {
