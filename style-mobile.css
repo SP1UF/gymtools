@@ -39,6 +39,56 @@ body {
     margin-top: 20px;
 }
 
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+.tools {
+    display: flex;
+    flex-direction: column; /* pionowo, jak na telefonie */
+    align-items: center; /* wycentrowanie przycisków */
+    gap: 12px;
+    padding: 20px;
+}
+
+/* Styl pojedynczego przycisku */
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* stała szerokość - możesz zmienić */
+    height: 50px; /* stała wysokość */
+    background-color: #ff6600;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Opcjonalnie: wygląd na mniejszych ekranach */
+@media (max-width: 480px) {
+    .button {
+        width: 80%; /* przyciski 80% szerokości ekranu na małych urządzeniach */
+    }
+}
 /* Stylizacja kalkulatora BMI */
 .bmi-calculator {
     background: white;
