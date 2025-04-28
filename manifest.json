@@ -1,0 +1,15 @@
+{
+    "name": "GymTools Mobile",
+    "short_name": "GymTools",
+    "start_url": "mobile.html",
+    "display": "standalone",
+    "background_color": "#f0f0f0",
+    "theme_color": "#f0f0f0",
+    "icons": [
+      {
+        "src": "logoapple.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      }
+    ]
+  }
