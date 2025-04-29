@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="logoapple.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="GymTools">
+    <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymTools Mobile</title>
+    <link rel="stylesheet" href="style-mobile.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="mobile.html" class="logo-link">
+            <img src="logo.png" alt="GymTools Mobile Logo" class="logo">
+        </a>
+    </header>
+
+    <main class="main-content">
+        <a href="javascript:history.back()" class="back-button">←</a>
+        <section id="kalkulatorkalorii">
+            <h1>Kalkulator Kalorii</h1>
+        
+            <div class="calculator">
+                <form id="calorie-form">
+                    <label for="age">Wiek:</label>
+                    <input type="number" id="age" placeholder="np. 30" required>
+        
+                    <label for="gender">Płeć:</label>
+                    <select id="gender" required>
+                        <option value="">Wybierz</option>
+                        <option value="male">Mężczyzna</option>
+                        <option value="female">Kobieta</option>
+                    </select>
+        
+                    <label for="weight-cal">Waga (kg):</label>
+                    <input type="number" id="weight-cal" placeholder="np. 75" required>
+        
+                    <label for="height-cal">Wzrost (cm):</label>
+                    <input type="number" id="height-cal" placeholder="np. 180" required>
+        
+                    <label for="activity">Poziom aktywności:</label>
+                    <select id="activity" required>
+                        <option value="">Wybierz</option>
+                        <option value="1.2">Brak aktywności</option>
+                        <option value="1.375">Lekka aktywność (1-3x/tydz.)</option>
+                        <option value="1.55">Średnia aktywność (3-5x/tydz.)</option>
+                        <option value="1.725">Duża aktywność (6-7x/tydz.)</option>
+                        <option value="1.9">Bardzo duża aktywność (codziennie + fiz. praca)</option>
+                    </select>
+        
+                    <button type="submit">Oblicz zapotrzebowanie</button>
+                </form>
+        
+                <div id="calorie-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 GymTools Mobile</p>
+        <a href="https://www.instagram.com/kapixjestemok?igsh=bjhjdDc1dGtmOGN2">kapixjestemok</a> <a href="https://www.instagram.com/lewandowskifranek344?igsh=MWZnajhtazU3eTg5aA%3D%3D&utm_source=qr">lewandowskifranek344</a>
+    </footer>
+
+    <script>
+        document.getElementById('calorie-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            const age = parseInt(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            const weight = parseFloat(document.getElementById('weight-cal').value);
+            const height = parseFloat(document.getElementById('height-cal').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+    
+            if (!age || !weight || !height || !activity || !gender) {
+                document.getElementById('calorie-result').textContent = 'Proszę uzupełnić wszystkie pola.';
+                return;
+            }
+    
+            let bmr;
+    
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+    
+            const tdee = Math.round(bmr * activity);
+    
+            document.getElementById('calorie-result').textContent =
+                `Twoje dzienne zapotrzebowanie kaloryczne to około ${tdee} kcal.`;
+        });
+    </script>
+</body>
+</html>
